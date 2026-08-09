@@ -47,6 +47,11 @@ jobs:
       - name: Run PW
         run: npm run test
 
+      # Install Allure CLI
+      - name: Install Allure CLI
+        if: always()
+        run: npm install -g allure-commandline
+
       # Generate Allure report
       - name: Generate Allure report
         if: always()
@@ -62,7 +67,7 @@ jobs:
   # Deploy Allure report to GitHub Pages
   deploy:
     needs: test
-    if: needs.test.result == 'success'
+    if: always() && needs.test.result != 'cancelled'
     runs-on: ubuntu-latest
 
     environment:
