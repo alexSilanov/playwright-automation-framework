@@ -47,6 +47,15 @@ jobs:
       - name: Run PW
         run: npm run test
 
+      # Upload Playwright test results and traces
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results/
+          retention-days: 7
+
       # Install Allure CLI
       - name: Install Allure CLI
         if: always()
@@ -76,7 +85,7 @@ jobs:
 
     steps:
 
-      # Deploy report to GitHub Pages
+      # Deploy Allure report to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
