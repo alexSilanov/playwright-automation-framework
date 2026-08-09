@@ -7,7 +7,7 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Allure](https://img.shields.io/badge/Allure_Report-FF6A00?logo=allure&logoColor=white)](https://allurereport.org/)
 
-[![Tests](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/tests.yml)
+[![Tests](https://github.com/alexSilanov/playwright-automation-framework/actions/workflows/main.yml/badge.svg)](https://github.com/alexSilanov/playwright-automation-framework/actions/workflows/main.yml)
 
 Automated UI and API testing framework built with Playwright and TypeScript.
 
