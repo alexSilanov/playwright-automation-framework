@@ -1,0 +1,40 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep @API",
+    "api:smoke": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@API.*@Smoke\"",
+    "api:regression": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@API.*@Regression\"",
+    "api:negative": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@API.*@Negative\"",
+    "e2e": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep @E2E",
+    "e2e:smoke": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@E2E.*@Smoke\"",
+    "e2e:regression": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@E2E.*@Regression\"",
+    "e2e:negative": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep \"@E2E.*@Negative\"",
+    "smoke": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep @Smoke",
+    "regression": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test --grep @Regression",
+    "debug": "npx playwright test --ui",
+    "test": "cross-env NODE_ENV=dev ENVIRONMENT=test playwright test",
+    "allureOpen": "allure open",
+    "allureGenerate": "allure generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^25.6.0",
+    "allure-playwright": "^3.10.2",
+    "cross-env": "^10.1.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.5.0",
+    "config": "^5.0.0",
+    "dotenv": "^17.4.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "type": "commonjs"
+}

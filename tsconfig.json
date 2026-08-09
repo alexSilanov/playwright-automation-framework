@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    // 1. Указываем среде, что мы работаем в Node.js
+    "types": ["node"],
+    
+    // 2. Говорим использовать современные возможности JavaScript
+    "target": "ES2022",
+    "module": "commonjs",
+    
+    // 3. Обязательные настройки для совместимости
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  // 4. Говорим, где искать файлы тестов
+  "include": ["**/*.ts"]
+}

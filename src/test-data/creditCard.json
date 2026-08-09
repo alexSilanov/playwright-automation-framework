@@ -1,0 +1,10 @@
+{
+  "validCard": {
+    "name": "Max Mustermann",
+    "number": "1111 2222 4444 5555",
+    "cvc": "125",
+    "month": "11",
+    "year": "2030"
+  },
+  "invalidCard": {}
+}
