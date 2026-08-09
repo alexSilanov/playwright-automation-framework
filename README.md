@@ -1,80 +1,42 @@
 # Playwright Automation Framework
 
-Automated testing framework built with Playwright and TypeScript for API and E2E testing.
+Playwright automation framework for **API and E2E testing** with **Allure reporting**, **Docker** and **GitHub Actions CI/CD**.
 
-The framework supports test categorization, environment configuration, Allure reporting, and CI execution through GitHub Actions.
-
-## Tech Stack
+## 🚀 Tech Stack
 
 - Playwright
 - TypeScript
 - Node.js
 - Allure Report
 - GitHub Actions
-- Faker
-- dotenv
-- cross-env
+- GitHub Pages
+- Docker
 
-## Features
-
-- API testing
-- End-to-end testing
-- Smoke testing
-- Regression testing
-- Negative testing
-- Test tagging
-- Environment-based configuration
-- Allure reporting
-- CI pipeline with GitHub Actions
-- Playwright `forbidOnly` protection
-
-## Project Structure
+## 📁 Project Structure
 
 ```text
 playwright-automation-framework/
-│
 ├── .github/
 │   └── workflows/
 │       └── main.yml
-│
-├── tests/
-│
 ├── config/
-│
-├── playwright.config.ts
+├── src/
+├── tests/
+│   ├── api.spec.ts
+│   └── e2e.spec.ts
+├── Dockerfile
 ├── package.json
 ├── package-lock.json
-├── .gitignore
+├── playwright.config.ts
 └── README.md
 ```
 
-## Prerequisites
-
-Make sure the following are installed:
-
-- Node.js
-- npm
-- Git
-
-Check the installed versions:
-
-```bash
-node --version
-npm --version
-git --version
-```
-
-## Installation
+## ⚙️ Installation
 
 Clone the repository:
 
 ```bash
-git clone <repository-url>
-```
-
-Navigate to the project directory:
-
-```bash
+git clone https://github.com/alexSilanov/playwright-automation-framework.git
 cd playwright-automation-framework
 ```
 
@@ -87,240 +49,153 @@ npm ci
 Install Playwright browsers:
 
 ```bash
-npx playwright install
-```
-
-For Linux/CI environments:
-
-```bash
 npx playwright install --with-deps
 ```
 
-## Environment Configuration
+## 🧪 Running Tests
 
-The framework uses environment variables to configure test execution.
-
-Example:
-
-```text
-NODE_ENV=dev
-ENVIRONMENT=test
-```
-
-Environment-specific configuration can be stored in `.env` files.
-
-Do not commit sensitive credentials or secrets to the repository.
-
-## Running Tests
-
-### Run all tests
+Run all tests:
 
 ```bash
-npm test
+npm run test
 ```
 
-### Run API tests
+Run API tests:
 
 ```bash
 npm run api
 ```
 
-### Run E2E tests
+Run E2E tests:
 
 ```bash
 npm run e2e
 ```
 
-### Run Smoke tests
+Run smoke tests:
 
 ```bash
 npm run smoke
 ```
 
-### Run Regression tests
+Run regression tests:
 
 ```bash
 npm run regression
 ```
 
-### Run API Smoke tests
-
-```bash
-npm run api:smoke
-```
-
-### Run API Regression tests
-
-```bash
-npm run api:regression
-```
-
-### Run API Negative tests
-
-```bash
-npm run api:negative
-```
-
-### Run E2E Smoke tests
-
-```bash
-npm run e2e:smoke
-```
-
-### Run E2E Regression tests
-
-```bash
-npm run e2e:regression
-```
-
-### Run E2E Negative tests
-
-```bash
-npm run e2e:negative
-```
-
-### Run tests in UI mode
+Open Playwright UI:
 
 ```bash
 npm run debug
 ```
 
-## Test Tags
+## 🏷️ Test Tags
 
-Tests are organized using Playwright tags.
+Tests are organized using tags:
+
+- `@API`
+- `@E2E`
+- `@Smoke`
+- `@Regression`
+- `@Negative`
 
 Examples:
 
-```text
-@API
-@E2E
-@Smoke
-@Regression
-@Negative
-```
-
-You can combine tags to run a specific group of tests.
-
-Example:
-
 ```bash
-npx playwright test --grep "@API.*@Smoke"
+npm run api:smoke
+npm run api:regression
+npm run api:negative
 ```
 
-## Allure Report
+## 📊 Allure Report
 
-The project uses `allure-playwright` for test reporting.
-
-After test execution, Allure results are generated in:
-
-```text
-allure-results/
-```
-
-Generate the HTML report:
+Generate the Allure report:
 
 ```bash
 npm run allureGenerate
 ```
 
-Open the report:
+Open the report locally:
 
 ```bash
 npm run allureOpen
 ```
 
-The generated Allure report should not be committed to Git.
+The Allure report contains:
 
-The following directories should be ignored:
+- Test execution results
+- Test suites
+- Categories
+- Test duration
+- Environment information
+- Failed test details
 
-```text
-allure-results/
-allure-report/
-```
+## 🔄 CI/CD
 
-## CI/CD
+The project uses **GitHub Actions** for continuous integration.
 
-The project uses GitHub Actions for Continuous Integration.
+The workflow runs automatically on:
 
-The CI pipeline automatically:
+- Push to `main` or `master`
+- Pull requests to `main` or `master`
+- Manual workflow execution
 
-1. Checks out the repository.
-2. Installs Node.js.
-3. Installs project dependencies.
-4. Installs Playwright browsers and system dependencies.
-5. Runs Playwright tests.
-6. Generates test reports.
-
-Example workflow:
+### CI/CD Pipeline
 
 ```text
-Pull Request
-      ↓
+Git Push / Pull Request
+        ↓
 GitHub Actions
-      ↓
+        ↓
 Install dependencies
-      ↓
+        ↓
 Install Playwright
-      ↓
-Run tests
-      ↓
-Generate report
-      ↓
-Tests passed
-      ↓
-Merge Pull Request
+        ↓
+Run Playwright tests
+        ↓
+Generate Allure report
+        ↓
+Upload Allure report
+        ↓
+Deploy to GitHub Pages
 ```
 
-The CI pipeline helps prevent broken or incomplete automation code from being merged into the `main` branch.
+## 🌐 Allure Report
 
-## Pull Request Workflow
+View the latest test execution report:
 
-Recommended development workflow:
+[![Allure Report](https://img.shields.io/badge/Allure-Report-orange?logo=allure)](https://alexSilanov.github.io/playwright-automation-framework/)
 
-```text
-Create feature branch
-        ↓
-Implement changes
-        ↓
-Run tests locally
-        ↓
-Push changes
-        ↓
-Create Pull Request
-        ↓
-GitHub Actions
-        ↓
-Tests pass
-        ↓
-Code Review
-        ↓
-Merge into main
+👉 [Open Allure Report](https://alexSilanov.github.io/playwright-automation-framework/)
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t playwright-automation .
 ```
 
-## Important Playwright Configuration
+Run tests in Docker:
 
-The project uses Playwright's `forbidOnly` option to prevent accidentally committing focused tests such as:
-
-```typescript
-test.only(...)
+```bash
+docker run --rm playwright-automation
 ```
 
-This ensures that CI fails if a focused test is accidentally left in the codebase.
+## 📋 Available npm Scripts
 
-## Useful Commands
+| Command                  | Description            |
+| ------------------------ | ---------------------- |
+| `npm run test`           | Run all tests          |
+| `npm run api`            | Run API tests          |
+| `npm run e2e`            | Run E2E tests          |
+| `npm run smoke`          | Run smoke tests        |
+| `npm run regression`     | Run regression tests   |
+| `npm run debug`          | Open Playwright UI     |
+| `npm run allureGenerate` | Generate Allure report |
+| `npm run allureOpen`     | Open Allure report     |
 
-| Command                  | Description                  |
-| ------------------------ | ---------------------------- |
-| `npm ci`                 | Install project dependencies |
-| `npm test`               | Run all tests                |
-| `npm run api`            | Run API tests                |
-| `npm run e2e`            | Run E2E tests                |
-| `npm run smoke`          | Run smoke tests              |
-| `npm run regression`     | Run regression tests         |
-| `npm run debug`          | Run Playwright UI mode       |
-| `npm run allureGenerate` | Generate Allure report       |
-| `npm run allureOpen`     | Open Allure report           |
+## 📄 License
 
-## Author
-
-Alexander Silanov
+This project is licensed under the ISC License.
