@@ -1,0 +1,31 @@
+# Workflow name
+name: pw automation framework
+# When the workflow should run
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main,master]
+  workflow_dispatch:
+  # Jobs
+jobs:
+  # Job name
+  test:
+    timeout-minutes: 60
+    # set environment
+    runs-on: ubuntu-latest
+    steps:
+      # checkout
+      - uses: actions/checkout@v7
+      # install node
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+      # Install project dependencies
+      - name: Install dependencies
+        run: npm ci
+      # install node
+      - name: Install PW
+        run: npx playwright install --with-deps
+      - name: Run PW
+        run: npm run test
