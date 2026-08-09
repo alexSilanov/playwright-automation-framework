@@ -28,4 +28,4 @@ jobs:
       - name: Install PW
         run: npx playwright install --with-deps
       - name: Run PW
-        run: npx run test
+        run: npm run test
