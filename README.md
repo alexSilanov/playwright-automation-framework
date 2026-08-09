@@ -1,5 +1,16 @@
 # Playwright Automation Framework
 
+# 🧪 E-Commerce Test Automation
+
+[![Playwright](https://img.shields.io/badge/Playwright-45ba4b?logo=playwright&logoColor=white)](https://playwright.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Allure](https://img.shields.io/badge/Allure_Report-FF6A00?logo=allure&logoColor=white)](https://allurereport.org/)
+
+[![Tests](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/tests.yml)
+
+Automated UI and API testing framework built with Playwright and TypeScript.
+
 Playwright automation framework for **API and E2E testing** with **Allure reporting**, **Docker** and **GitHub Actions CI/CD**.
 
 ## 🚀 Tech Stack
@@ -131,6 +142,14 @@ The Allure report contains:
 - Environment information
 - Failed test details
 
+## 🌐 Allure Report
+
+View the latest test execution report:
+
+[![Allure Report](https://img.shields.io/badge/Allure-Report-orange?logo=allure)](https://alexSilanov.github.io/playwright-automation-framework/)
+
+👉 [Open Allure Report](https://alexSilanov.github.io/playwright-automation-framework/)
+
 ## 🔄 CI/CD
 
 The project uses **GitHub Actions** for continuous integration.
@@ -161,14 +180,6 @@ Upload Allure report
 Deploy to GitHub Pages
 ```
 
-## 🌐 Allure Report
-
-View the latest test execution report:
-
-[![Allure Report](https://img.shields.io/badge/Allure-Report-orange?logo=allure)](https://alexSilanov.github.io/playwright-automation-framework/)
-
-👉 [Open Allure Report](https://alexSilanov.github.io/playwright-automation-framework/)
-
 ## 🐳 Docker
 
 Build the Docker image:
@@ -196,6 +207,6 @@ docker run --rm playwright-automation
 | `npm run allureGenerate` | Generate Allure report |
 | `npm run allureOpen`     | Open Allure report     |
 
-## 📄 License
+## 📄 Author
 
-This project is licensed under the ISC License.
+Alexander Silanov
