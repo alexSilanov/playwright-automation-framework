@@ -21,7 +21,7 @@ test.describe("API Tests", () => {
     },
   );
 
-  test.only(
+  test(
     "should reject unsupported PUT request for products",
     { tag: ["@API", "@Regression", "@Negative"] },
     async () => {
