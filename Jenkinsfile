@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                nodejs('NodeJS2290') {
+                nodejs('NodeJS-26') {
                     bat '''
                         echo === INSTALL DEPENDENCIES ===
                         call npm ci
